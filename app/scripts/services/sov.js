@@ -1,6 +1,18 @@
 'use strict';
 
-angular.module('subconnectApp')
-  .service('Sov', function Sov() {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+angular.module('subconnectApp').factory('Sov', function Sov($q, $firebase) {
+  var deferred = $q.defer();
+  var FBURL = 'https://subconnect.firebaseio.com/';
+///////////////////////////
+//get data from Firebase
+///////////////////////////
+  return {
+      getSoV: function () {
+        var ref = new Firebase(FBURL);
+        console.log('I made it inside');
+        return $firebase(ref);
+      }
+    };
+  return deferred.promise;
+});
+

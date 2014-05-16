@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('subconnectApp', []);
+angular.module('subconnectApp', ['firebase']);
