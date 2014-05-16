@@ -1,36 +1,102 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">subconnect example</h3>
-</div>
+    <div id="wrapper">
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#">SubConnect</a>
+                </li>
+                <li><a href="#">My Projects</a>
+                </li>
+                <li><a href="#">Current Project</a>
+                </li>
+                <li><a href="#">My Account</a>
+                </li>
+                <li><a href="#">John D. Storey</a>
+                </li>
+                <li><a href="#">Log Out</a>
+                </li>
+            </ul>
+            <ul class='sidebar-nav-bottom'>
+                <li><a href="#">Suggest Feature</a>
+                </li>
+                <li><a href="#">Knowledge Base</a>
+                </li>
+                <li><a href="#">Hints and Help</a>
+                </li>
+            </ul>
+        </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            <ol class="breadcrumb">
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">John D. Code Challenge</a></li>
+              <li class="active">Schedule of Values</li>
+            </ol>
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+                <div class="row">
+                  <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">
+                    	<h1 class='col-xs-10'>Winning Sub Contract Amount<h1>
+                    	<button type="button" class="btn btn-success">$1,000.00</button>
+                    </div>
+                    
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+                    <!-- Table -->
+                    <table class='table sov-table'>
+                    	<tr>
+                    		<td></td>
+											  <td>Description</td>
+											  <td>Contract Amount</td> 
+											  <td>Accepted</td>
+											  <td>Comment</td>
+											  <td></td>
+											</tr>
+											<tr>
+                    		<td><i class="fa fa-bars"></i></td>
+											  <td class='description'><input placeholder='Category'></input><input placeholder='Subcategory'></input></td>
+											  <td><input placeholder='Amount'></input></td> 
+											  <td>{{Accepted}}</td>
+											  <td>{{Comment}}</td>
+											  <td>
+											  	<div class="btn-group">
+												  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+												      <i class="fa fa-cog"></i>
+												    </button>
+												    <ul class="dropdown-menu">
+												      <li><a href="#">Comment History</a></li>
+												      <li><a href="#">Add Row</a></li>
+												      <li><a href="#">Delete Row</a></li>
+												    </ul>
+											  	</div>
+												</td>
+											</tr>
+											<tr>
+												<td id='subtotal' colspan="6">Schedule of Values Subtotal {{value of amounts}} | $1000 from balancing
+												</td>
+											</tr>
+											<tr>
+												<td id='submit' colspan="6"><button type="button" class="btn btn-primary">Submit</button>
+												</td>
+											</tr>
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+    </div>
 
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
-</div>
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>

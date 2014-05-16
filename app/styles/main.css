@@ -1,79 +1,203 @@
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+#sidebar-wrapper {
+  margin-left: -250px;
+  margin-top: -20px;
+  left: 250px;
+  width: 250px;
+  background: #000;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
+#page-content-wrapper {
+  width: 100%;
 }
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
+
+.contain {
+  padding: 0px 20px;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li {
   line-height: 40px;
-  padding-bottom: 19px;
+  text-indent: 20px;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.sidebar-nav li a {
+  color: #999999;
+  display: block;
+  text-decoration: none;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
+.sidebar-nav li a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.inset {
+  padding: 0px 15px;
+}
+
+.sidebar-nav-bottom{
+  position: absolute;
+  top: 300px;
+  left: -20px;
+  list-style-type: none;
+}
+
+.breadcrumb {
+  margin-top: 20px;
+}
+
+.panel-default > .panel-heading {
+border-color: none;
+padding: 1.5em .75em;
+background-color: #4C4D50;
+color: white;
+font-size: 1.5em;
+position: relative;
+min-height: 86px;
+}
+
+.panel-heading h1{
+  font-size: 1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.panel-heading .btn {
+  margin-top: -5px;
+  position: absolute;
+  right: 20px;
+}
+
+.sov-table tr:first-child {
+  background-color: #f5f5f5;
+}
+
+.sov-table td{
+  border-right: 1px solid lightgrey;
+  vertical-align: middle;
+}
+
+.sov-table td:last-child{
+  border-right: none;
+}
+
+.sov-table td:first-child{
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+  color: lightgrey;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+.sov-table input {
+  width: 100%;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
+.sov-table .description input {
+  width: 49%;
+}
+
+.sov-table input:last-child {
+  float: right;
+}
+
+.sov-table .dropdown-menu {
+  left: initial;
+  right: 0;
+}
+
+#subtotal {
+  color: grey;
+  border-top: 1px solid lightgrey;
+  background-color: #f5f5f5;
+  text-align: right;
+}
+
+#submit {
+  text-align: right;
+}
+/** Responsive
+ ---------------------------------------------------------*/
+
+@media (max-width:767px) {
+
+  #wrapper {
     padding-left: 0;
-    padding-right: 0;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
+
+  #sidebar-wrapper {
+    left: 0;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+
+  #wrapper.active {
+    position: relative;
+    left: 250px;
   }
+
+  #wrapper.active #sidebar-wrapper {
+    left: 250px;
+    width: 250px;
+    transition: all 0.4s ease 0s;
+  }
+
+  #menu-toggle {
+    display: inline-block;
+  }
+
+  .inset {
+    padding: 15px;
+  }
+
 }
