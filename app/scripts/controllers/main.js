@@ -2,9 +2,13 @@
 
 angular.module('subconnectApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+///////////////////////////
+// MAKE SCOPE VARIABLES
+///////////////////////////
+var test = 'test';
+$scope.test = test;
+///////////////////////////
+// Add and Delete Rows
+///////////////////////////
+
+});

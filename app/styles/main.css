@@ -129,16 +129,19 @@ min-height: 86px;
 
 .sov-table td{
   border-right: 1px solid lightgrey;
-  vertical-align: middle;
+  vertical-align: middle !important;
+  text-align: center;
 }
 
 .sov-table td:last-child{
   border-right: none;
+  text-align: center;
 }
 
 .sov-table td:first-child{
   text-align: center;
   color: lightgrey;
+  vertical-align: middle;
 }
 
 .sov-table input {
