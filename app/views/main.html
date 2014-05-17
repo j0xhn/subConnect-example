@@ -25,7 +25,6 @@
                 </li>
             </ul>
         </div>
-
         <!-- Page content -->
         <div id="page-content-wrapper">
             <ol class="breadcrumb">
@@ -42,51 +41,58 @@
                     	<h1 class='col-xs-10'>Winning Sub Contract Amount<h1>
                     	<button type="button" class="btn btn-success">$1,000.00</button>
                     </div>
-                    
-
                     <!-- Table -->
+                    <form ng-submit='testFunction(categoryFromView)' ng-controller='MainCtrl' id='subCreateForm'>
                     <table class='table sov-table'>
                     	<tr>
-                    		<td></td>
-											  <td>Description</td>
-											  <td>Contract Amount</td> 
-											  <td>Accepted</td>
-											  <td>Comment</td>
-											  <td></td>
-											</tr>
-											<tr>
-                    		<td><i class="fa fa-bars"></i></td>
-											  <td class='description'><input placeholder='Category'></input><input placeholder='Subcategory'></input></td>
-											  <td><input placeholder='Amount'></input></td> 
-											  <td>-</td>
-											  <td>-</td>
-											  <td>
-											  	<div class="btn-group">
-												  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-												      <i class="fa fa-cog"></i>
-												    </button>
-												    <ul class="dropdown-menu">
-												      <li><a href="#">Comment History</a></li>
-												      <li><a href="#">Add Row</a></li>
-												      <li><a href="#">Delete Row</a></li>
-												    </ul>
-											  	</div>
-												</td>
-											</tr>
-											<tr>
-												<td id='subtotal' colspan="6">Schedule of Values Subtotal {{valueAmounts}} | $1000 from balancing
-												</td>
-											</tr>
-											<tr>
-												<td id='submit' colspan="6"><button type="button" class="btn btn-primary">Submit</button>
-												</td>
-											</tr>
-                    </table>
+                    	  <td></td>
+						  <td>Description</td>
+						  <td>Contract Amount</td> 
+						  <td>Accepted</td>
+						  <td>Comment</td>
+						  <td></td>
+						</tr>
+						<tr>
+                		  <td><i class="fa fa-bars"></i></td>
+						  <td class='description'>
+                            <input placeholder='Category' name='categoryFromView' ng-model='categoryFromView'></input>
+                            <input placeholder='Subcategory' ng-model='subCategoryFromView'></input>
+                          </td>
+						  <td>
+                            <input placeholder='Amount'></input>
+                          </td> 
+						  <td>-</td>
+						  <td>-</td>
+						  <td>
+						  	<div class="btn-group">
+							  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							      <i class="fa fa-cog"></i>
+							    </button>
+							    <ul class="dropdown-menu">
+							      <li><a href="#">Comment History</a></li>
+							      <li><a href="#">Add Row</a></li>
+							      <li><a href="#">Delete Row</a></li>
+							    </ul>
+						  	</div>
+							</td>
+						</tr>
+						<tr>
+							<td id='subtotal' colspan="6">Schedule of Values Subtotal {{valueAmounts}} | $1000 from balancing
+							</td>
+						</tr>
+						<tr>
+							<td id='submit' colspan="6">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+							</td>
+						</tr>
+                      </table>
+                    </form>
                   </div>
                 </div>
             </div>
         </div>
         {{test}}
+        {{categoryFromView}}
     </div>
 
     <!-- Custom JavaScript for the Menu Toggle -->

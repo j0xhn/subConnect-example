@@ -7,6 +7,9 @@ angular.module('subconnectApp')
 ///////////////////////////
     var test = 'My Angular Is Working';
     $scope.test = test;
+    $scope.testFunction = function(param){
+      console.log(param);
+    }
 ///////////////////////////
 // Firebase
 ///////////////////////////
@@ -15,14 +18,15 @@ angular.module('subconnectApp')
     $scope.sov = $firebase(sovRef);
     // function for pushing new object
     $scope.subCreate = function (categoryFromView, subcategoryFromView, amountFromView, acceptedValue, commentFromView){
+      console.log(categoryFromView);
       sovRef.push({
-             "category" : '',
-             "subcategory":'',
-             "amount": 100,
-             "accepted": 0,
+             "category" : categoryFromView || '',
+             "subcategory":subcategoryFromView || '',
+             "amount": amountFromView || '',
+             "accepted": 0 || '',
              "comments" : ['first comment','second comment','third comment']
       });
-}
+    }
 
 
   });
