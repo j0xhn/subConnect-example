@@ -17,13 +17,13 @@ angular.module('subconnectApp')
     // Automatically syncs everywhere in realtime
     $scope.sov = $firebase(sovRef);
     // function for pushing new object
-    $scope.subCreate = function (categoryFromView, subcategoryFromView, amountFromView, acceptedValue, commentFromView){
+    $scope.subCreate = function (categoryFromView, subcategoryFromView, amountFromView){
       console.log(categoryFromView);
       sovRef.push({
              "category" : categoryFromView || '',
              "subcategory":subcategoryFromView || '',
              "amount": amountFromView || '',
-             "accepted": 0 || '',
+             "accepted": '-',
              "comments" : ['first comment','second comment','third comment']
       });
     }

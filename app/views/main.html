@@ -42,7 +42,7 @@
                     	<button type="button" class="btn btn-success">$1,000.00</button>
                     </div>
                     <!-- Table -->
-                    <form ng-submit='testFunction(categoryFromView)' ng-controller='MainCtrl' id='subCreateForm'>
+                    <form ng-submit='subCreate(categoryFromView, subCategoryFromView, amountFromView)' ng-controller='MainCtrl' id='subCreateForm'>
                     <table class='table sov-table'>
                     	<tr>
                     	  <td></td>
@@ -59,7 +59,7 @@
                             <input placeholder='Subcategory' ng-model='subCategoryFromView'></input>
                           </td>
 						  <td>
-                            <input placeholder='Amount'></input>
+                            <input placeholder='Amount' ng-model='amountFromView'></input>
                           </td> 
 						  <td>-</td>
 						  <td>-</td>
