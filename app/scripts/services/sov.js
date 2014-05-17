@@ -9,7 +9,7 @@ angular.module('subconnectApp').factory('Sov', function Sov($q, $firebase) {
   return {
       getSoV: function () {
         var ref = new Firebase(FBURL);
-        console.log('I made it inside');
+        console.log('I made it inside Sov');
         return $firebase(ref);
       }
     };

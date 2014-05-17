@@ -148,7 +148,7 @@ min-height: 86px;
   width: 100%;
 }
 
-.sov-table .description input {
+.sov-table .description input, .sov-table .description p {
   width: 49%;
 }
 

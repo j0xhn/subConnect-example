@@ -52,6 +52,32 @@
 						  <td>Comment</td>
 						  <td></td>
 						</tr>
+<!-- NG-REPEAT ROWS -->
+                        <tr ng-repeat='sub in subs'>
+                          <td><i class="fa fa-bars"></i></td>
+                          <td class='description'>
+                            <input ng-model='sub.category'></input>
+                            <input ng-model='sub.subcategory'></input>
+                          </td>
+                          <td>
+                            <input ng-model='sub.amount'></input>
+                          </td> 
+                          <td>-</td>
+                          <td>-</td>
+                          <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                  <i class="fa fa-cog"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Comment History</a></li>
+                                  <li><a href="#">Add Row</a></li>
+                                  <li><a href="#">Delete Row</a></li>
+                                </ul>
+                            </div>
+                            </td>
+                        </tr>
+<!-- INPUT ROW -->
 						<tr>
                 		  <td><i class="fa fa-bars"></i></td>
 						  <td class='description'>
@@ -93,6 +119,7 @@
         </div>
         {{test}}
         {{categoryFromView}}
+        {{subs}}
     </div>
 
     <!-- Custom JavaScript for the Menu Toggle -->
