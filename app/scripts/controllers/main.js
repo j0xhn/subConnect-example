@@ -5,24 +5,26 @@ angular.module('subconnectApp')
 
 // Make scope variables
 ///////////////////////////
+
+    //For handling math in view
     $scope.Math = window.Math;
-    var test = 'My Angular Is Working';
-    $scope.test = test;
-    $scope.testFunction = function(param){
-      console.log(param);
-    }
+
+    //Get's subs from Service
     var subs = Sov.getSoV();
     subs.$bind($scope, 'subs');
 
 // Firebase
 ///////////////////////////
+
     var sovRef = new Firebase('https://subconnect.firebaseio.com/');
     // Automatically syncs everywhere in realtime
     $scope.sov = $firebase(sovRef);
+    
 
 // Creating Subs
 ///////////////////////////
-    // function for pushing new object
+
+    // function for creating new object
     $scope.subCreate = function (categoryFromView, subcategoryFromView, amountFromView){
       console.log(categoryFromView);
       sovRef.push({
@@ -34,6 +36,7 @@ angular.module('subconnectApp')
       });
     }
 
+     // function for deleting object
     $scope.subDelete = function (sub){
       var deleteRef = new Firebase('https://subconnect.firebaseio.com/'+sub.$id);
       deleteRef.remove();
@@ -44,9 +47,10 @@ angular.module('subconnectApp')
       // deleteSub.remove(onComplete);
     }
 
-// Math for Subtotal
+// Test for Sortable
 ///////////////////////////
 
+   $scope.list = ["one", "two", "thre", "four", "five", "six"];
 
   });
 

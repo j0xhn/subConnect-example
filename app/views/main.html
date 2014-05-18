@@ -43,65 +43,69 @@
                     </div>
                     <!-- Table -->
                     <form ng-submit='subCreate(categoryFromView, subCategoryFromView, amountFromView)' ng-controller='MainCtrl' id='subCreateForm'>
-                    <table class='table sov-table'>
-                    	<tr>
-                    	  <td></td>
-						  <td>Description</td>
-						  <td>Contract Amount</td> 
-						  <td>Accepted</td>
-						  <td>Comment</td>
-						  <td></td>
-						</tr>
+                    <table class='table sov-table' ui:sortable>
+                        <thead>
+                        	<tr>
+                        	  <td></td>
+    						  <td>Description</td>
+    						  <td>Contract Amount</td> 
+    						  <td>Accepted</td>
+    						  <td>Comment</td>
+    						  <td></td>
+    						</tr>
+                        </thead>
 <!-- NG-REPEAT ROWS -->
-                        <tr ng-repeat='sub in subs'>
-                          <td><i class="fa fa-bars"></i></td>
-                          <td class='description'>
-                            <input ng-model='sub.category'></input>
-                            <input ng-model='sub.subcategory'></input>
-                          </td>
-                          <td>
-                            <input ng-model='sub.amount'></input>
-                          </td> 
-                          <td>-</td>
-                          <td>-</td>
-                          <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                  <i class="fa fa-cog"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                  <li><a href="#">Comment History</a></li>
-                                  <li><a ng-click='subCreate()'>Add Row</a></li>
-                                  <li><a ng-click='subDelete(sub)'>Delete Row</a></li>
-                                </ul>
-                            </div>
-                            </td>
-                        </tr>
-<!-- INPUT ROW -->
-						<tr>
-                		  <td><i class="fa fa-bars"></i></td>
-						  <td class='description'>
-                            <input placeholder='Category' name='categoryFromView' ng-model='categoryFromView'></input>
-                            <input placeholder='Subcategory' ng-model='subCategoryFromView'></input>
-                          </td>
-						  <td>
-                            <input placeholder='Amount' ng-model='amountFromView'></input>
-                          </td> 
-						  <td>-</td>
-						  <td>-</td>
-						  <td>
-						  	<div class="btn-group">
-							  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-							      <i class="fa fa-cog"></i>
-							    </button>
-							    <ul class="dropdown-menu">
-							      <li><a href="#">Comment History</a></li>
-							      <li><a href="#">Add Row</a></li>
-							      <li><a href="#">Delete Row</a></li>
-							    </ul>
-						  	</div>
-							</td>
-						</tr>
+                        <tbody>
+                            <tr ng-repeat='sub in subs'>
+                              <td><i class="fa fa-bars"></i></td>
+                              <td class='description'>
+                                <input ng-model='sub.category'></input>
+                                <input ng-model='sub.subcategory'></input>
+                              </td>
+                              <td>
+                                <input ng-model='sub.amount'></input>
+                              </td> 
+                              <td>-</td>
+                              <td>-</td>
+                              <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                      <i class="fa fa-cog"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="#">Comment History</a></li>
+                                      <li><a ng-click='subCreate()'>Add Row</a></li>
+                                      <li><a ng-click='subDelete(sub)'>Delete Row</a></li>
+                                    </ul>
+                                </div>
+                                </td>
+                            </tr>
+    <!-- INPUT ROW -->
+    						<tr>
+                    		  <td><i class="fa fa-bars"></i></td>
+    						  <td class='description'>
+                                <input placeholder='Category' name='categoryFromView' ng-model='categoryFromView'></input>
+                                <input placeholder='Subcategory' ng-model='subCategoryFromView'></input>
+                              </td>
+    						  <td>
+                                <input placeholder='Amount' ng-model='amountFromView'></input>
+                              </td> 
+    						  <td>-</td>
+    						  <td>-</td>
+    						  <td>
+    						  	<div class="btn-group">
+    							  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    							      <i class="fa fa-cog"></i>
+    							    </button>
+    							    <ul class="dropdown-menu">
+    							      <li><a href="#">Comment History</a></li>
+    							      <li><a href="#">Add Row</a></li>
+    							      <li><a href="#">Delete Row</a></li>
+    							    </ul>
+    						  	</div>
+    							</td>
+    						</tr>
+                        </tbody>
 						<tr>
 							<td id='subtotal' colspan="6">Schedule of Values Subtotal <span>${{subs|orderByPriority | sumByKey:'amount'}}</span> | ${{ 1000 - (subs|orderByPriority | sumByKey:'amount')}} from balancing
 							</td>
@@ -117,15 +121,19 @@
                 </div>
             </div>
         </div>
-        {{test}}
-        {{categoryFromView}}
-        {{subs}}
+<a href="http://jsfiddle.net/SSSUUUSSS/Bsusr/1/"></a>test for sortable array of
+            <table style="width:auto;" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody ui:sortable ng:model="list">
+                <tr ng-repeat="item in list" class="item" style="cursor: move;">
+                    <td>{{$index}}</td>
+                    <td>{{item}}</td>
+                </tr>
+            </tbody>{{list}}
+            </table>
     </div>
-
-    <!-- Custom JavaScript for the Menu Toggle -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
-    </script>

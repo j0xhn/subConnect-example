@@ -123,7 +123,7 @@ min-height: 86px;
   right: 20px;
 }
 
-.sov-table tr:first-child {
+.sov-table thead{
   background-color: #f5f5f5;
 }
 
@@ -177,6 +177,18 @@ min-height: 86px;
 
 #submit {
   text-align: right;
+}
+/** Test for sortable
+ ---------------------------------------------------------*/
+.item, .placeholder {
+    padding: 2px;
+    width: 50px;
+    height: 20px;
+    border: 1px solid #333;
+    background: #EEE;
+}
+.placeholder {
+    background: #AEF;
 }
 /** Responsive
  ---------------------------------------------------------*/
