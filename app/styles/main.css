@@ -161,6 +161,13 @@ min-height: 86px;
   right: 0;
 }
 
+.sov-table span {
+  background-color: orange;
+  padding: 5px 5px;
+  color: white;
+  font-weight: 600px;
+}
+
 #subtotal {
   color: grey;
   border-top: 1px solid lightgrey;

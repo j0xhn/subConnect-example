@@ -71,8 +71,8 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                   <li><a href="#">Comment History</a></li>
-                                  <li><a href="#">Add Row</a></li>
-                                  <li><a href="#">Delete Row</a></li>
+                                  <li><a ng-click='subCreate()'>Add Row</a></li>
+                                  <li><a ng-click='subDelete(sub)'>Delete Row</a></li>
                                 </ul>
                             </div>
                             </td>
@@ -103,7 +103,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td id='subtotal' colspan="6">Schedule of Values Subtotal {{valueAmounts}} | $1000 from balancing
+							<td id='subtotal' colspan="6">Schedule of Values Subtotal <span>${{subs|orderByPriority | sumByKey:'amount'}}</span> | ${{ 1000 - (subs|orderByPriority | sumByKey:'amount')}} from balancing
 							</td>
 						</tr>
 						<tr>
