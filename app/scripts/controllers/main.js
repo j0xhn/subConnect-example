@@ -47,10 +47,12 @@ angular.module('subconnectApp')
       // deleteSub.remove(onComplete);
     }
 
-// Test for Sortable
+// Watch Inputs
 ///////////////////////////
 
-   $scope.list = ["one", "two", "thre", "four", "five", "six"];
+   $scope.$watch('[myproperty1,myproperty2,myproperty3]',function(nv,ov){
+    consol.log('you filled the 3 inputs')
+    });
 
   });
 

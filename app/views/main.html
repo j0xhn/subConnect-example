@@ -43,7 +43,7 @@
                     </div>
                     <!-- Table -->
                     <form ng-submit='subCreate(categoryFromView, subCategoryFromView, amountFromView)' ng-controller='MainCtrl' id='subCreateForm'>
-                    <table class='table sov-table' ui:sortable>
+                    <table class='table sov-table'>
                         <thead>
                         	<tr>
                         	  <td></td>
@@ -55,7 +55,7 @@
     						</tr>
                         </thead>
 <!-- NG-REPEAT ROWS -->
-                        <tbody>
+                        <tbody  ui:sortable>
                             <tr ng-repeat='sub in subs'>
                               <td><i class="fa fa-bars"></i></td>
                               <td class='description'>
@@ -121,19 +121,4 @@
                 </div>
             </div>
         </div>
-            <a href="http://jsfiddle.net/SSSUUUSSS/Bsusr/1/">test for sortable array</a> of
-            <table style="width:auto;" class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Index</th>
-                    <th>Count</th>
-                </tr>
-            </thead>
-            <tbody ui:sortable ng:model="list">
-                <tr ng-repeat="item in list" class="item" style="cursor: move;">
-                    <td>{{$index}}</td>
-                    <td>{{item}}</td>
-                </tr>
-            </tbody>{{list}}
-            </table>
     </div>

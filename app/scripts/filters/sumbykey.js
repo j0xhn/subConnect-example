@@ -3,7 +3,6 @@
 angular.module('subconnectApp')
   .filter('sumByKey', function () {
     return function (data, key) {
-          console.log(data, key)
         if (typeof (data) === 'undefined' || typeof (key) === 'undefined') {
             return 0;
         }
