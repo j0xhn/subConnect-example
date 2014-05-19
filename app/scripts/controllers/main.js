@@ -30,7 +30,7 @@ angular.module('subconnectApp')
       sovRef.push({
              "category" : categoryFromView || '',
              "subcategory":subcategoryFromView || '',
-             "amount": amountFromView || 0,
+             "amount": amountFromView || '',
              "accepted": '-',
              "comments" : ['first comment','second comment','third comment']
       });
@@ -50,8 +50,11 @@ angular.module('subconnectApp')
 // Watch Inputs
 ///////////////////////////
 
-   $scope.$watch('[myproperty1,myproperty2,myproperty3]',function(nv,ov){
-    consol.log('you filled the 3 inputs')
+   $("#amountInput").on("click", function(){
+    console.log('you changed input value');
+    if( document.getElementById('categoryInput').value || document.getElementById('subCategoryInput').value ) {
+            $scope.subCreate();
+      }
     });
 
   });

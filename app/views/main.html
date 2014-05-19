@@ -59,11 +59,11 @@
                             <tr ng-repeat='sub in subs'>
                               <td><i class="fa fa-bars"></i></td>
                               <td class='description'>
-                                <input ng-model='sub.category'></input>
-                                <input ng-model='sub.subcategory'></input>
+                                <input id='categoryInput' placeholder='Category' ng-model='sub.category'></input>
+                                <input id='subCategoryInput' placeholder='Sub Category' ng-model='sub.subcategory'></input>
                               </td>
                               <td>
-                                <input ng-model='sub.amount'></input>
+                                <input id='amountInput' placeholder='Amount' ng-model='sub.amount'></input>
                               </td> 
                               <td>-</td>
                               <td>-</td>
@@ -84,11 +84,11 @@
     						<tr>
                     		  <td><i class="fa fa-bars"></i></td>
     						  <td class='description'>
-                                <input placeholder='Category' name='categoryFromView' ng-model='categoryFromView'></input>
-                                <input placeholder='Subcategory' ng-model='subCategoryFromView'></input>
+                                <input placeholder='Category' id='categoryInput' name='categoryFromView' ng-model='categoryFromView'></input>
+                                <input placeholder='Subcategory' id='subCategoryInput' ng-model='subCategoryFromView'></input>
                               </td>
     						  <td>
-                                <input placeholder='Amount' ng-model='amountFromView'></input>
+                                <input placeholder='Amount' id='amountInput' ng-model='amountFromView'></input>
                               </td> 
     						  <td>-</td>
     						  <td>-</td>
