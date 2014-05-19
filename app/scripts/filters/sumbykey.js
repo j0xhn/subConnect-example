@@ -8,7 +8,10 @@ angular.module('subconnectApp')
         }
         var sum = 0;
         for (var i = data.length - 1; i >= 0; i--) {
-            sum += parseInt(data[i][key]);
+            var amount = parseInt(data[i][key]);
+            if (amount) {
+               sum += amount; 
+            } 
         }
         return sum;
     };

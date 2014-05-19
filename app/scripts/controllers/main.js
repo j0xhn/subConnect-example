@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('subconnectApp')
-  .controller('MainCtrl', function ($scope, $firebase, Sov, $filter) {
+  .controller('MainCtrl', function ($q, $scope, $firebase, Sov, $filter) {
 
 // Make scope variables
 ///////////////////////////
@@ -26,35 +26,43 @@ angular.module('subconnectApp')
 
     // function for creating new object
     $scope.subCreate = function (categoryFromView, subcategoryFromView, amountFromView){
-      console.log(categoryFromView);
+
       sovRef.push({
-             "category" : categoryFromView || '',
-             "subcategory":subcategoryFromView || '',
-             "amount": amountFromView || '',
-             "accepted": '-',
-             "comments" : ['first comment','second comment','third comment']
-      });
+         "category" : categoryFromView || '',
+         "subcategory":subcategoryFromView || '',
+         "amount": amountFromView || '',
+         "accepted": '-',
+         "comments" : ['first comment','second comment','third comment']
+      })
+      // DISABLED BECAUSE RAN OUT OF TIME TRYING TO FIGURE OUT FIREBASE PROMISES
+      // sovRef.once("value", function(snap){
+      //   $( "input[name='amount']:last" ).css({ backgroundColor: "yellow", fontWeight: "bolder" });
+      // })
+      // Dirty Hack // ran out of time so had to implement to meet deadline 
+      var selectLastInput = function(){
+        $( "input[name='amount']:last" ).focus();
+      };
+      setTimeout(function(){selectLastInput()}, 50);  
     }
 
      // function for deleting object
     $scope.subDelete = function (sub){
       var deleteRef = new Firebase('https://subconnect.firebaseio.com/'+sub.$id);
       deleteRef.remove();
-      // console.log(sub.$id);
-      // sub.set(null);
-      // var deleteSub = sovRef+'/'+sub.$id;
-      // console.log(deleteSub);
-      // deleteSub.remove(onComplete);
     }
 
-// Watch Inputs
+// Watch Inputs of Last table row
 ///////////////////////////
 
-   $("#amountInput").on("click", function(){
+   $("#amountInput").on("focus", function(){
     console.log('you changed input value');
     if( document.getElementById('categoryInput').value || document.getElementById('subCategoryInput').value ) {
-            $scope.subCreate();
+            $scope.subCreate($scope.categoryFromView, $scope.subCategoryFromView, $scope.amountFromView);
       }
+    $scope.categoryFromView = '';
+    $scope.subCategoryFromView ='';
+    $scope.amountFromView = '';  
+  
     });
 
   });
